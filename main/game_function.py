@@ -380,9 +380,9 @@ def show_list(ai_settings, screen):
         presskey_image = presskey_font.render('Ranking Info', True, (0, 0, 0))
         screen.blit(presskey_image, (310, 30))
         screen.blit(image1, (400, 500))
-        screen.blit(pygame.font.Font('../font/STKAITI.TTF', 35).render('↓  Difficult Level 1  ↓', True, (0, 0, 0)), (50, 200))
-        screen.blit(pygame.font.Font('../font/STKAITI.TTF', 35).render('↓  Difficult Level 2  ↓', True, (0, 0, 0)), (310, 200))
-        screen.blit(pygame.font.Font('../font/STKAITI.TTF', 35).render('↓  Difficult level 3  ↓', True, (0, 0, 0)), (560, 200))
+        screen.blit(pygame.font.Font('../font/STKAITI.TTF', 35).render('↓  Difficult Level 1  ↓', True, (0, 0, 0)), (35, 200))
+        screen.blit(pygame.font.Font('../font/STKAITI.TTF', 35).render('↓  Difficult Level 2  ↓', True, (0, 0, 0)), (260, 200))
+        screen.blit(pygame.font.Font('../font/STKAITI.TTF', 35).render('↓  Difficult level 3  ↓', True, (0, 0, 0)), (500, 200))
         for i in range(5):
             screen.blit(pygame.font.Font('../font/STKAITI.TTF', 25).render(l1[i], True, (0, 0, 0)), (80, 263 + i * 37))
         for i in range(5):
