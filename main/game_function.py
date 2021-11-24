@@ -26,7 +26,7 @@ def check_events(ai_settings):
 def show_start_interface(ai_settings, screen):
     title_Font = pygame.font.Font("../font/STXINGKA.TTF", 80)  # set the title font
     title_image = title_Font.render("Greedy Snake", True, (0, 0, 0))  #
-    background = pygame.image.load(r"../image/贪吃蛇启动界面背景2.jpg")
+    background = pygame.image.load(r"../image/background2.jpg")
     author_font = pygame.font.Font("../font/STXINGKA.TTF", 40)
     author_image = author_font.render(u"made by : Shengyuan Wang", True, (0, 0, 0))
 
@@ -78,7 +78,7 @@ def check_choose_events(ai_settings):
 
 # draw difficult level choosing page
 def show_choose_level(ai_settings, screen):
-    background1 = pygame.image.load(r"../image/选择难度1.jpg")
+    background1 = pygame.image.load(r"../image/difficultlevel.jpg")
     level_font = pygame.font.Font("../font/STKAITI.TTF", 40)  # set difficulty choosing title
     level_image = level_font.render('↓ choose the difficult level ↓', True, (255, 255, 240))
 
@@ -122,9 +122,9 @@ def show_end_interface(ai_settings, screen):
     screen.blit(game_image, game_rect)
     screen.blit(over_image, over_rect)
     pygame.display.flip()
-    # 将得分情况写入txt文件 write the score into txt
+    # write the score into txt
     if ai_settings.score != 0 and ai_settings.length != 0:
-        with open('游戏得分统计.txt', 'a', encoding='utf-8-sig') as f:
+        with open('scores.txt', 'a', encoding='utf-8-sig') as f:
             f.write('%d %d' % (ai_settings.score, ai_settings.length))
             if ai_settings.score / ai_settings.length == 5:
                 f.write(' 1\n')
@@ -211,20 +211,7 @@ def check_play_events(snake):
                 snake.direction = 'down'
 
 
-# def update_screen(ai_settings, screen, snake):
-#     screen.fill(ai_settings.bg_color)
-#     draw_grid(ai_settings, screen)
-#     screen.blit(scores_image, (0, 0))
-#     # move the snake
-#     del snake.coords[-1]  # add snake head
-#     snake.update()  # remove snake tail
-#     if not is_game_over(ai_settings, snake):
-#         ai_settings.game_stats = -1
-#     else:
-#         draw_snake(ai_settings, screen, snake)
-#         pygame.display.flip()
-#         # pause
-#         ai_settings.my_clock.tick(ai_settings.clock_frq)
+
 
 
 def is_game_over(ai_settings, snake):
@@ -357,10 +344,7 @@ def read_list_txt(file_name, list_mode1, list_mode2, list_mode3):
 
 # draw the ranking
 def show_list(ai_settings, screen):
-    排 = pygame.image.load('../image/排.png')
-    行 = pygame.image.load('../image/行.png')
-    榜 = pygame.image.load('../image/榜.png')
-    background = pygame.image.load(r"../image/排行榜.jpg")
+    background = pygame.image.load(r"../image/rank.jpg")
     font1 = pygame.font.Font("../font/STKAITI.TTF", 35)
     image1 = font1.render('press 1 return to main interface', True, (0, 0, 0))
 
@@ -368,7 +352,7 @@ def show_list(ai_settings, screen):
     l1 = [0] * 5
     l2 = [0] * 5
     l3 = [0] * 5
-    read_list_txt('游戏得分统计.txt', l1, l2, l3)
+    read_list_txt('scores.txt', l1, l2, l3)
 
     while True:
         screen.fill(ai_settings.bg_color)  # draw the screen

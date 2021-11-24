@@ -1,6 +1,5 @@
 import random
 
-
 class Food():
     def __init__(self, ai_settings, snake):
         self.update(ai_settings, snake)
