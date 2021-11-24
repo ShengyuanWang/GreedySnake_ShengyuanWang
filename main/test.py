@@ -6,16 +6,16 @@ import json
 
 
 class config:
-    WIDTH = 20  # 地图列数
-    HEIGHT = 20  # 地图行数
-    blockLength = 30  # 绘制画面时每一个节点方块的边长
+    WIDTH = 20  # row of the map
+    HEIGHT = 20  # column of the map
+    blockLength = 30  # draw the length of the unit square of the map
 
 
-class point:  # 点类（每一个唯一坐标只有对应的一个实例）
-    _list = []  # 储存所有的point类实例
-    _tag = True  # 标记最新创建的实例是否为_list中的已有的实例，True表示不是已有实例
+class point:  # the class of points(each postion only have one point)点类（每一个唯一坐标只有对应的一个实例）
+    _list = []  # store all points
+    _tag = True  # tag whether the most recent created list have existed, true means no existed point
 
-    def __new__(cls, x, y):  # 重写new方法实现对于同样的坐标只有唯一的一个实例
+    def __new__(cls, x, y):  # rewrite the new function to make one point at one position
         for i in point._list:
             if i.x == x and i.y == y:
                 point._tag = False
@@ -29,9 +29,9 @@ class point:  # 点类（每一个唯一坐标只有对应的一个实例）
             self.x = x
             self.y = y
             self.father = None
-            self.F = 0  # 当前点的评分  F=G+H
-            self.G = 0  # 起点到当前节点所花费的消耗
-            self.cost = 0  # 父节点到此节点的消耗
+            self.F = 0  # the score of the point  F=G+H
+            self.G = 0  # the cost of moving from the start point to this point
+            self.cost = 0  # the cost of movingg from the father point to this point
         else:
             point._tag = True
 
@@ -271,8 +271,6 @@ class GameBoard(QMainWindow):  # 可视化类，pyqt5进行编写。
             f.write(json.dumps(self.Map))
             self.addDisplayText('地图保存成功-->map.txt')
 
-    # else:
-    # self.addDisplayText('地图保存失败')
     def button_LoadMap(self):
         try:
             with open('map.txt', 'r') as f:
