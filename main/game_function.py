@@ -612,7 +612,7 @@ def choose_longest_safe_move(ai_settings, psnake, pboard):
     return best_move
 
 
-# 让蛇头朝着蛇尾运行一步 make the snake's head move towards the snake's tail
+# make the snake's head move towards the snake's tail
 def follow_tail(ai_settings, psnake, pboard, pfood):
     temp_snake = psnake[:]
     temp_board = board_reset(ai_settings, temp_snake, pboard, pfood)
@@ -665,7 +665,7 @@ def any_possible_move(ai_settings, psnake, pboard, pfood):
 
 
 def run_game_ai(ai_settings):
-    pygame.display.set_caption('贪吃蛇-AI')
+    pygame.display.set_caption('GreedySnake-AI')
     global Main_Display, Main_Font, Snake_Clock
     Snake_Clock = pygame.time.Clock()
     Main_Display = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
