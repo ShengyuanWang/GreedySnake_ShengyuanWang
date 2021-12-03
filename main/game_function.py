@@ -76,7 +76,7 @@ def check_choose_events(ai_settings):
                 ai_settings.game_stats = 0
 
 
-# draw difficult level choosing page
+# draw difficult level choosing interface
 def show_choose_level(ai_settings, screen):
     background1 = pygame.image.load(r"../image/difficultlevel.jpg")
     level_font = pygame.font.Font("../font/STKAITI.TTF", 40)  # set difficulty choosing title
