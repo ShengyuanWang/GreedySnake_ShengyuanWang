@@ -35,10 +35,6 @@ def run_game1_3():
 
 
 def run_game():
-    music = pygame.mixer.music.load("bgm.wav")
-    pygame.mixer.music.play()
-
-
     while True:
         if ai_settings.game_stats == 0:
             gf.show_start_interface(ai_settings, screen)
