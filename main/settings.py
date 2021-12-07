@@ -2,11 +2,7 @@
 Course: CS123
 Professor: Susan Fox
 Editor: Shengyuan Wang
-"""
-"""
-Course: CS123
-Professor: Susan Fox
-Editor: Shengyuan Wang
+The settings for the program
 """
 import pygame
 
