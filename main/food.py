@@ -2,7 +2,9 @@
 Course: CS123
 Professor: Susan Fox
 Editor: Shengyuan Wang
+This file aims to edit food class and functions.
 """
+
 import random
 
 class Food():
