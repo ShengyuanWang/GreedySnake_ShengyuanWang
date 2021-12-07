@@ -2,6 +2,7 @@
 Course: CS123
 Professor: Susan Fox
 Editor: Shengyuan Wang
+This file includes all helpers for the main files.
 """
 import pygame
 import sys
