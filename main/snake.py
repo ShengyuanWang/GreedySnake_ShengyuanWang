@@ -2,6 +2,7 @@
 Course: CS123
 Professor: Susan Fox
 Editor: Shengyuan Wang
+The file editing snake
 """
 
 import random
